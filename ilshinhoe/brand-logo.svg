@@ -1,14 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="일신회 인장 로고">
-  <rect width="256" height="256" rx="56" fill="#F4EBDD"/>
-  <g fill="none" stroke="#C65A2E" stroke-width="17" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M50 63h156"/>
-    <path d="M72 88c14-24 32-34 56-34s42 10 56 34"/>
-    <path d="M59 108h138"/>
-    <path d="M127 111v98"/>
-    <path d="M72 139h111"/>
-    <path d="M79 178h99"/>
-    <path d="M91 211c22-21 57-29 82-7"/>
-    <path d="M65 142c10 13 13 30 6 50"/>
-    <path d="M190 137c-10 16-13 35-6 55"/>
-  </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 100" role="img" aria-label="일신회 一新 로고"><rect width="180" height="100" fill="white"/><text x="90" y="73" text-anchor="middle" fill="#111111" font-size="72" font-weight="800" font-family="serif">一新</text></svg>
