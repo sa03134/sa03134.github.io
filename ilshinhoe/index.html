@@ -1,58 +1,135 @@
 <!doctype html>
 <html lang="ko">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#0a0d0c">
-  <meta name="color-scheme" content="dark">
-  <meta name="description" content="일신회 — 말보다 기록. 세 사람의 실행과 정산을 기록하는 주간 리그.">
-  <meta property="og:title" content="ILSHINHOE · 일신회">
-  <meta property="og:description" content="말보다 기록. 세 사람의 실행과 정산을 기록하는 주간 리그.">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="https://sa03134.github.io/ilshinhoe/icon-512.svg">
-  <link rel="manifest" href="./manifest.webmanifest">
-  <link rel="icon" href="./icon-192.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="./styles.css?v=4">
-  <title>ILSHINHOE · 일신회</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f2f4f6">
+<meta name="description" content="일신회 — 실행을 기록하고, 약속을 지키는 세 사람의 리그">
+<meta property="og:title" content="일신회 · ILSHINHOE">
+<meta property="og:description" content="말보다 실행. 오늘의 약속을 기록하세요.">
+<meta property="og:type" content="website">
+<link rel="manifest" href="./manifest.webmanifest?v=9">
+<link rel="icon" href="./icon-192.svg" type="image/svg+xml">
+<title>일신회 · ILSHINHOE</title>
+<style>
+:root{--bg:#f2f4f6;--card:#fff;--text:#191f28;--muted:#8b95a1;--line:#e5e8eb;--soft:#f7f8fa;--red:#b32631;--redsoft:#fff1f2;--green:#159570;--shadow:0 8px 28px rgba(0,0,0,.045)}
+*{box-sizing:border-box}html{background:var(--bg)}body{margin:0;color:var(--text);background:var(--bg);font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR","Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}button,input,textarea,select{font:inherit}button{cursor:pointer}button:active{transform:scale(.985)}
+.app{width:min(100%,760px);margin:auto;min-height:100vh;padding:0 18px calc(92px + env(safe-area-inset-bottom))}.top{height:72px;display:flex;align-items:center;justify-content:space-between}.brand{display:flex;align-items:center;gap:10px}.logo{width:42px;height:42px;border-radius:14px;background:#f7f5f4;display:grid;place-items:center;overflow:hidden}.logo svg{width:36px;height:36px}.brand-copy b{display:block;font-size:16px;letter-spacing:-.02em}.brand-copy span{display:block;font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.08em}.top-actions{display:flex;gap:8px;align-items:center}.install{display:none;border:0;background:var(--text);color:white;border-radius:999px;padding:9px 12px;font-size:12px;font-weight:700}.sync{width:8px;height:8px;border-radius:50%;background:#c7cdd3}.sync.ok{background:var(--green)}.sync.bad{background:var(--red)}
+.view{display:none}.view.active{display:block}.hello{padding:10px 2px 16px}.hello small{font-size:13px;color:var(--muted);font-weight:650}.hello h1{font-size:29px;line-height:1.25;letter-spacing:-.045em;margin:6px 0 0}.hello h1 strong{color:var(--red)}
+.switcher{display:flex;gap:7px;overflow:auto;padding:1px 0 16px;scrollbar-width:none}.switcher::-webkit-scrollbar{display:none}.member-chip{flex:0 0 auto;border:1px solid var(--line);background:var(--card);border-radius:999px;padding:9px 13px;display:flex;align-items:center;gap:7px;color:#4e5968;font-size:13px;font-weight:700}.member-chip.active{border-color:var(--text);color:var(--text);box-shadow:inset 0 0 0 .5px var(--text)}.avatar{width:25px;height:25px;border-radius:50%;display:grid;place-items:center;background:var(--soft);font-size:11px;font-weight:850}.member-chip.active .avatar{background:var(--text);color:#fff}
+.summary{background:var(--card);border-radius:22px;padding:18px 18px 15px;box-shadow:var(--shadow)}.summary-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:15px}.summary-name{display:flex;align-items:center;gap:11px}.summary-name .avatar{width:45px;height:45px;font-size:16px;background:var(--text);color:#fff}.summary-name b{display:block;font-size:17px}.summary-name span{display:block;font-size:11px;color:var(--muted);margin-top:3px}.level{background:var(--redsoft);color:var(--red);font-size:11px;font-weight:850;padding:7px 9px;border-radius:999px}.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.metric{background:var(--soft);border-radius:14px;padding:11px}.metric b{display:block;font-size:18px;letter-spacing:-.03em}.metric span{font-size:10px;color:var(--muted)}
+.quote{margin-top:12px;background:#fff;border-radius:18px;padding:15px 16px;display:flex;gap:10px;align-items:flex-start}.quote-mark{color:var(--red);font-size:23px;line-height:1;font-family:Georgia,serif}.quote p{font-size:13px;line-height:1.52;margin:0;font-weight:650}.quote small{display:block;color:var(--muted);font-size:10px;margin-top:5px}
+.section{margin-top:24px}.section-head{display:flex;justify-content:space-between;align-items:end;margin:0 2px 10px}.section-head h2{font-size:19px;letter-spacing:-.035em;margin:0}.section-head span{color:var(--muted);font-size:11px}.text-btn{border:0;background:none;color:var(--red);font-size:12px;font-weight:800;padding:4px}
+.goal-list{background:var(--card);border-radius:20px;overflow:hidden;box-shadow:var(--shadow)}.goal{padding:15px 15px 14px;border-bottom:1px solid var(--line)}.goal:last-child{border-bottom:0}.goal-row{display:flex;align-items:center;gap:11px}.goal-main{min-width:0;flex:1}.goal-title{font-weight:800;font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.goal-sub{margin-top:4px;color:var(--muted);font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.fine{color:var(--red);font-size:11px;font-weight:800}.check{width:46px;height:46px;flex:0 0 46px;border-radius:15px;border:0;background:#f2f4f6;color:#b0b8c1;font-size:20px;font-weight:900}.check.done{background:var(--red);color:#fff}.weekly-action{width:46px;height:46px;flex:0 0 46px;border-radius:15px;border:0;background:var(--redsoft);color:var(--red);font-size:18px;font-weight:900}.weekly-action.done{background:#f2f4f6;color:#b0b8c1}.progress-line{display:flex;align-items:center;gap:8px;margin-top:11px}.progress{height:6px;background:#eef1f3;border-radius:999px;overflow:hidden;flex:1}.progress i{display:block;height:100%;background:var(--red);border-radius:999px}.progress-line small{width:28px;text-align:right;color:var(--muted);font-size:10px;font-weight:750}.empty{background:#fff;border-radius:20px;padding:26px 18px;text-align:center;color:var(--muted);font-size:13px}.wide{width:100%;margin-top:10px;border:0;border-radius:15px;padding:14px;font-weight:800;background:#fff;color:var(--red)}
+.page-title{padding:16px 2px 8px}.page-title h1{font-size:29px;margin:0;letter-spacing:-.045em}.page-title p{margin:7px 0 0;color:var(--muted);font-size:13px}.rank-card{background:#fff;border-radius:20px;overflow:hidden;box-shadow:var(--shadow)}.rank-row{display:grid;grid-template-columns:28px 42px 1fr auto;align-items:center;gap:10px;padding:14px 15px;border-bottom:1px solid var(--line)}.rank-row:last-child{border-bottom:0}.rank-no{font-weight:850;color:#b0b8c1;font-size:12px}.rank-row:first-child .rank-no{color:var(--red)}.rank-row .avatar{width:42px;height:42px;font-size:15px}.rank-info b{display:block;font-size:14px}.rank-info span{display:block;color:var(--muted);font-size:10px;margin-top:3px}.rank-xp{text-align:right}.rank-xp b{display:block;font-size:14px}.rank-xp span{font-size:9px;color:var(--muted)}.league-note{margin-top:10px;color:var(--muted);font-size:11px;padding:0 4px}
+.ledger-summary{background:var(--text);color:#fff;border-radius:22px;padding:19px}.ledger-summary span{font-size:11px;color:#b0b8c1}.ledger-summary b{display:block;font-size:29px;margin-top:6px;letter-spacing:-.04em}.ledger-list{margin-top:12px;background:#fff;border-radius:20px;overflow:hidden}.ledger-row{display:flex;gap:12px;align-items:center;padding:14px 15px;border-bottom:1px solid var(--line)}.ledger-row:last-child{border-bottom:0}.ledger-main{min-width:0;flex:1}.ledger-main b{display:block;font-size:14px}.ledger-main span{display:block;color:var(--muted);font-size:10px;margin-top:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.ledger-money{text-align:right}.ledger-money b{font-size:14px}.settle{margin-top:4px;border:0;background:none;color:var(--red);font-size:10px;font-weight:800;padding:0}.settled{color:var(--muted);text-decoration:line-through}.tools{margin-top:12px;background:#fff;border-radius:20px;overflow:hidden}.tool{width:100%;border:0;background:#fff;display:flex;justify-content:space-between;align-items:center;padding:16px;text-align:left;border-bottom:1px solid var(--line)}.tool:last-child{border-bottom:0}.tool b{font-size:14px}.tool span{font-size:12px;color:var(--muted)}.rules{white-space:pre-line;color:#6b7684;font-size:12px;line-height:1.65}
+.bottom-nav{position:fixed;z-index:20;left:50%;bottom:0;transform:translateX(-50%);width:min(100%,760px);height:calc(68px + env(safe-area-inset-bottom));padding:5px 18px env(safe-area-inset-bottom);display:grid;grid-template-columns:repeat(3,1fr);background:rgba(255,255,255,.94);backdrop-filter:blur(18px);border-top:1px solid rgba(0,0,0,.05)}.nav{border:0;background:none;color:#b0b8c1;font-size:11px;font-weight:750;display:flex;flex-direction:column;gap:4px;align-items:center;justify-content:center}.nav i{font-style:normal;font-size:20px;line-height:1}.nav.active{color:var(--red)}
+dialog{width:min(100%,760px);max-width:none;border:0;padding:0;margin:auto 0 0;border-radius:25px 25px 0 0;background:#fff}dialog::backdrop{background:rgba(25,31,40,.42)}.sheet{padding:19px 18px calc(24px + env(safe-area-inset-bottom));max-height:88vh;overflow:auto}.sheet-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}.sheet-head h3{margin:0;font-size:21px}.close{border:0;background:#f2f4f6;width:35px;height:35px;border-radius:50%;font-size:20px;color:#6b7684}.field{display:block;margin-bottom:13px}.field span{display:block;color:#6b7684;font-size:11px;font-weight:750;margin-bottom:6px}.field input,.field textarea,.field select{width:100%;border:1px solid var(--line);background:#fff;border-radius:13px;padding:12px;color:var(--text);outline:none}.field textarea{min-height:70px;resize:vertical}.field input:focus,.field textarea:focus,.field select:focus{border-color:#b0b8c1}.two{display:grid;grid-template-columns:1fr 1fr;gap:9px}.save{width:100%;border:0;border-radius:15px;background:var(--red);color:#fff;padding:14px;font-weight:850}.delete{width:100%;border:0;background:#fff;color:#e24949;padding:13px;margin-top:4px;font-weight:750}.toast{position:fixed;z-index:50;left:50%;bottom:88px;transform:translate(-50%,10px);background:#191f28;color:#fff;border-radius:999px;padding:10px 14px;font-size:12px;opacity:0;pointer-events:none;transition:.18s}.toast.show{opacity:1;transform:translate(-50%,0)}
+@media(min-width:800px){.app{padding-bottom:40px}.bottom-nav{position:sticky;top:0;bottom:auto;margin:0 auto 12px;transform:none;left:auto;width:100%;height:54px;border:0;border-radius:17px;box-shadow:var(--shadow);padding:4px}.nav{flex-direction:row;font-size:13px}.nav i{font-size:16px}.hello{padding-top:26px}.goal-list,.rank-card,.ledger-list,.tools,.summary{border:1px solid #edf0f2}}
+</style>
 </head>
 <body>
-  <div class="grain" aria-hidden="true"></div>
-  <main class="app-shell">
-    <header class="topbar">
-      <a class="brand" href="./" aria-label="일신회 홈">
-        <img class="brand-mark" src="./icon-192.svg" alt="일신회 문장">
-        <span class="brand-copy"><b>ILSHINHOE</b><small>一新會 · EXECUTE FIRST</small></span>
-      </a>
-      <div class="top-actions"><time id="dateLabel"></time><button id="installBtn" class="icon-btn install-btn" type="button" hidden>앱 설치</button></div>
-    </header>
+<main class="app">
+<header class="top">
+  <div class="brand">
+    <div class="logo" aria-hidden="true">
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <g fill="none" stroke="#b32631" stroke-width="6.7" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 25h58M29 35c6-9 13-13 21-13s15 4 21 13M24 44h52"/>
+          <path d="M49 45v38M28 55h42M31 70h37M36 83c8-8 20-12 29-2"/>
+          <path d="M25 56c4 5 5 11 2 19M74 54c-4 7-5 13-2 21"/>
+        </g>
+      </svg>
+    </div>
+    <div class="brand-copy"><b>일신회</b><span>ILSHINHOE · EXECUTE</span></div>
+  </div>
+  <div class="top-actions"><span id="sync" class="sync" title="서버 동기화"></span><button id="install" class="install">앱 설치</button></div>
+</header>
 
-    <section class="quote-panel panel-brass" aria-labelledby="quoteEyebrow">
-      <div class="quote-kicker" id="quoteEyebrow">TODAY'S WORD</div>
-      <blockquote id="dailyQuote">기록을 불러오는 중...</blockquote>
-      <div class="quote-meta"><span class="dash"></span><span id="quoteBy">일신회</span></div>
-    </section>
+<nav class="bottom-nav" aria-label="메인 메뉴">
+  <button class="nav active" data-view="today"><i>✓</i><span>오늘</span></button>
+  <button class="nav" data-view="league"><i>↗</i><span>리그</span></button>
+  <button class="nav" data-view="record"><i>₩</i><span>원장</span></button>
+</nav>
 
-    <section class="league-overview">
-      <div><p class="eyebrow">WEEKLY LEAGUE</p><h1>말보다 기록.<br><em>기록보다 실행.</em></h1></div>
-      <div class="overview-stats"><article><b id="weekCheckins">0</b><span>이번 주 체크</span></article><article><b id="activeGoals">0</b><span>활성 목표</span></article><article><b id="riskFine">0</b><span>예상 벌금</span></article></div>
-    </section>
+<section id="view-today" class="view active">
+  <div class="hello"><small id="dateLabel"></small><h1><span id="helloName">Macallan</span>,<br><strong>오늘도 실행할 차례예요.</strong></h1></div>
+  <div id="switcher" class="switcher"></div>
+  <div id="summary" class="summary"></div>
+  <div class="quote"><div class="quote-mark">“</div><div><p id="quoteText">오늘 할 일을 오늘 끝낸다.</p><small id="quoteBy">일신회</small></div></div>
+  <div class="section"><div class="section-head"><h2>오늘의 약속</h2><button id="addGoal" class="text-btn">추가</button></div><div id="goals" class="goal-list"></div></div>
+</section>
 
-    <section class="section"><div class="section-head"><div><span class="eyebrow">ORDER</span><h2>주간 서열</h2></div><span class="section-note">체크 1회 +20 XP · 주간 목표 완수 +40 XP</span></div><div id="ranking" class="ranking panel"></div></section>
+<section id="view-league" class="view">
+  <div class="page-title"><h1>이번 주 리그</h1><p>실행한 만큼 올라가요. 체크 1회는 20 XP예요.</p></div>
+  <div class="section"><div class="section-head"><h2>현재 순위</h2><span id="weekLabel"></span></div><div id="ranking" class="rank-card"></div><p class="league-note">주간 목표를 채우면 보너스 40 XP가 붙어요. 레벨은 누적 실행 기록을 기준으로 올라갑니다.</p></div>
+</section>
 
-    <section class="section"><div class="section-head"><div><span class="eyebrow">MEMBERS</span><h2>멤버</h2></div><span class="section-note">프로필을 눌러 전환</span></div><div id="memberTabs" class="member-tabs"></div><div id="profile" class="profile panel"></div></section>
+<section id="view-record" class="view">
+  <div class="page-title"><h1>벌금 원장</h1><p>확정된 벌금은 목표가 바뀌어도 원장에 남아요.</p></div>
+  <div id="ledgerSummary" class="ledger-summary"></div>
+  <div id="ledger" class="ledger-list"></div>
+  <div class="section"><div class="section-head"><h2>관리</h2></div><div class="tools"><button id="backup" class="tool"><b>내 데이터 백업</b><span>JSON 저장 ›</span></button><div class="tool"><div><b>정산 규칙</b><div id="rules" class="rules"></div></div></div></div></div>
+</section>
+</main>
 
-    <section class="section"><div class="section-head"><div><span class="eyebrow">OATHS</span><h2>서약</h2></div><span id="goalCount" class="section-note"></span></div><div id="goals" class="goal-list"></div><button id="addGoalBtn" class="wide-btn ghost-gold" type="button">+ 새 서약 추가</button></section>
-
-    <section class="section"><div class="section-head"><div><span class="eyebrow">LEDGER</span><h2>벌금 원장</h2></div><span id="ledgerSummary" class="section-note"></span></div><div id="ledger" class="ledger panel"></div></section>
-
-    <section class="section"><div class="section-head"><div><span class="eyebrow">HOUSE RULES</span><h2>운영 룰</h2></div></div><div class="panel rules-wrap"><div id="rules" class="rules"></div><div class="utility-row"><button id="exportBtn" class="utility-btn" type="button">원장 백업 내보내기</button><span id="syncState" class="sync-state">서버 동기화</span></div></div></section>
-
-    <footer><img src="./icon-192.svg" alt="" aria-hidden="true"><div><b>ILSHINHOE</b><small>계속 실행하는 사람들의 기록</small></div></footer>
-  </main>
-
-  <dialog id="goalDialog"><form method="dialog" class="sheet" id="goalForm"><div class="sheet-head"><div><span class="eyebrow">OATH EDITOR</span><h3 id="dialogTitle">새 서약</h3></div><button class="close-btn" value="cancel" aria-label="닫기">×</button></div><input type="hidden" id="goalId"><label>서약명<input id="goalTitle" maxlength="80" required placeholder="예: 독서"></label><label>실천 내용<textarea id="goalDescription" placeholder="예: 책 10p 이상 읽기"></textarea></label><label>인증 방식<input id="goalProof" placeholder="예: 마지막 페이지 사진"></label><div class="field-grid"><label>주기<select id="goalCadence"><option value="daily">매일</option><option value="weekly">주간</option></select></label><label>주간 횟수<input id="goalTarget" type="number" min="1" max="7" value="1"></label></div><label>미달성 벌금<input id="goalFine" type="number" min="0" step="1000" value="10000"></label><button class="wide-btn solid-gold" value="default">저장</button><button id="deleteGoalBtn" class="wide-btn danger-btn" type="button" hidden>이 서약 삭제</button></form></dialog>
-
-  <div id="toast" class="toast" role="status" aria-live="polite"></div>
-  <script src="./app.js?v=4" defer></script>
+<dialog id="goalDialog">
+<form id="goalForm" class="sheet" method="dialog">
+  <div class="sheet-head"><h3 id="dialogTitle">새 약속</h3><button class="close" value="cancel" aria-label="닫기">×</button></div>
+  <input type="hidden" id="goalId">
+  <label class="field"><span>약속 이름</span><input id="goalTitle" maxlength="80" required placeholder="예: 독서"></label>
+  <label class="field"><span>실천 내용</span><textarea id="goalDesc" placeholder="예: 책 10p 이상 읽기"></textarea></label>
+  <label class="field"><span>인증 방식</span><input id="goalProof" placeholder="예: 마지막 페이지 사진"></label>
+  <div class="two"><label class="field"><span>주기</span><select id="goalCadence"><option value="daily">매일</option><option value="weekly">주간</option></select></label><label class="field"><span>주간 횟수</span><input id="goalTarget" type="number" min="1" max="7" value="1"></label></div>
+  <label class="field"><span>미달성 벌금</span><input id="goalFine" type="number" min="0" step="1000" value="10000"></label>
+  <button class="save" value="default">저장하기</button><button id="deleteGoal" class="delete" type="button" hidden>이 약속 종료하기</button>
+</form>
+</dialog>
+<div id="toast" class="toast" role="status"></div>
+<script>
+const U='https://kpotsnjhysgrhlnlhdnz.supabase.co';
+const K='sb_publishable_DghWWFFdMmpY84PlZG7lMw_a0mKXqeX';
+const H={apikey:K,Authorization:'Bearer '+K,'Content-Type':'application/json'};
+const S={members:[],goals:[],checks:[],quotes:[],ledger:[],settings:{},memberId:localStorage.getItem('ilshinhoe_member')||'son-jeongwoo'};
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const ds=(d=new Date())=>`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+function monday(d=new Date()){d=new Date(d);d.setDate(d.getDate()-((d.getDay()+6)%7));d.setHours(0,0,0,0);return d}
+function addDays(d,n){d=new Date(d);d.setDate(d.getDate()+n);return d}
+const money=n=>new Intl.NumberFormat('ko-KR').format(Number(n)||0)+'원';
+const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+async function api(path,opt={}){const r=await fetch(`${U}/rest/v1/${path}`,{...opt,headers:{...H,...(opt.headers||{})}});const t=await r.text();if(!r.ok)throw Error(t||r.statusText);return t?JSON.parse(t):null}
+function member(id){return S.members.find(x=>x.id===id)}
+function memberGoals(id,activeOnly=true){return S.goals.filter(g=>g.member_id===id&&(!activeOnly||g.active))}
+function goalChecks(id){return S.checks.filter(c=>c.goal_id===id)}
+function weekChecks(id){const a=ds(monday()),b=ds(addDays(monday(),6));return S.checks.filter(c=>c.goal_id===id&&c.check_date>=a&&c.check_date<=b)}
+function weekXP(id){return memberGoals(id).reduce((sum,g)=>{const n=weekChecks(g.id).length;return sum+n*20+(g.cadence==='weekly'&&n>=g.target_count?40:0)},0)}
+function totalXP(id){const ids=new Set(memberGoals(id,false).map(g=>g.id));return S.checks.filter(c=>ids.has(c.goal_id)).length*20}
+function level(x){const n=Math.floor(x/120)+1;const names=['INITIATE','RUNNER','EXECUTOR','VANGUARD','CHAIR'];return {n,name:names[Math.min(n-1,names.length-1)]}}
+function streak(id){const ids=new Set(memberGoals(id,false).map(g=>g.id));const dates=[...new Set(S.checks.filter(c=>ids.has(c.goal_id)).map(c=>c.check_date))].sort().reverse();if(!dates.length)return 0;let d=new Date();if(dates[0]!==ds(d)){d.setDate(d.getDate()-1);if(dates[0]!==ds(d))return 0}let s=0;for(const v of dates){if(v===ds(d)){s++;d.setDate(d.getDate()-1)}else break}return s}
+function risk(id){const now=new Date(),start=ds(monday()),end=ds(now),elapsed=((now.getDay()+6)%7)+1;let sum=0;for(const g of memberGoals(id)){if(g.cadence==='daily'){const n=S.checks.filter(c=>c.goal_id===g.id&&c.check_date>=start&&c.check_date<=end).length;sum+=Math.max(0,elapsed-n)*g.fine_amount}else if(now.getDay()===0&&weekChecks(g.id).length<g.target_count){sum+=g.fine_amount}}return sum}
+function todayDone(g){return S.checks.some(c=>c.goal_id===g.id&&c.check_date===ds())}
+function toast(t){const e=$('#toast');e.textContent=t;e.classList.add('show');clearTimeout(toast.t);toast.t=setTimeout(()=>e.classList.remove('show'),1600)}
+function quoteToday(){if(!S.quotes.length)return null;const d=new Date(),seed=Number(`${d.getFullYear()}${d.getMonth()+1}${d.getDate()}`);return S.quotes[seed%S.quotes.length]}
+function renderSwitcher(){if(!member(S.memberId)&&S.members[0])S.memberId=S.members[0].id;$('#switcher').innerHTML=S.members.map(m=>`<button class="member-chip ${m.id===S.memberId?'active':''}" data-member="${esc(m.id)}"><span class="avatar">${esc(m.display_name[0])}</span>${esc(m.display_name)}</button>`).join('');$$('[data-member]').forEach(b=>b.onclick=()=>{S.memberId=b.dataset.member;localStorage.setItem('ilshinhoe_member',S.memberId);render();badge()})}
+function renderSummary(){const m=member(S.memberId);if(!m)return;const lv=level(totalXP(m.id));$('#helloName').textContent=m.display_name;$('#summary').innerHTML=`<div class="summary-top"><div class="summary-name"><span class="avatar">${esc(m.display_name[0])}</span><div><b>${esc(m.display_name)}</b><span>ILSHINHOE · ${lv.name}</span></div></div><span class="level">LV.${lv.n}</span></div><div class="metrics"><div class="metric"><b>${streak(m.id)}일</b><span>연속 실행</span></div><div class="metric"><b>${weekXP(m.id)}</b><span>이번 주 XP</span></div><div class="metric"><b>${money(risk(m.id)).replace('원','')}</b><span>예상 벌금</span></div></div>`}
+function renderGoals(){const gs=memberGoals(S.memberId);$('#goals').className=gs.length?'goal-list':'';$('#goals').innerHTML=gs.length?gs.map(g=>{const daily=g.cadence==='daily',n=daily?(todayDone(g)?1:0):weekChecks(g.id).length,target=daily?1:g.target_count,pct=Math.min(100,n/target*100),today=todayDone(g);return `<article class="goal"><div class="goal-row"><div class="goal-main" data-edit="${g.id}"><div class="goal-title">${esc(g.title)}</div><div class="goal-sub">${daily?'매일':'주 '+g.target_count+'회'} · ${esc(g.description||g.proof_method||'실천 후 체크')} <span class="fine">· 미달성 ${money(g.fine_amount)}</span></div></div><button class="${daily?'check':'weekly-action'} ${today?'done':''}" data-check="${g.id}" aria-label="체크">${daily?(today?'✓':'○'):(today?'✓':'+')}</button></div>${daily?'':`<div class="progress-line"><div class="progress"><i style="width:${pct}%"></i></div><small>${n}/${target}</small></div>`}</article>`}).join(''):'<div class="empty">아직 약속이 없어요.<br>첫 약속을 추가해보세요.</div>';$$('[data-check]').forEach(b=>b.onclick=()=>toggleCheck(b.dataset.check));$$('[data-edit]').forEach(b=>b.onclick=()=>openGoal(S.goals.find(g=>g.id===b.dataset.edit)))}
+function renderRanking(){const rows=[...S.members].sort((a,b)=>weekXP(b.id)-weekXP(a.id));$('#ranking').innerHTML=rows.map((m,i)=>{const lv=level(totalXP(m.id));return `<div class="rank-row"><div class="rank-no">${i+1}</div><div class="avatar">${esc(m.display_name[0])}</div><div class="rank-info"><b>${esc(m.display_name)}</b><span>LV.${lv.n} ${lv.name} · ${streak(m.id)}일 연속</span></div><div class="rank-xp"><b>${weekXP(m.id)}</b><span>XP</span></div></div>`}).join('')}
+function renderLedger(){const rows=S.ledger.filter(x=>x.member_id===S.memberId),open=rows.filter(x=>x.status==='open').reduce((s,x)=>s+Number(x.total_amount),0);$('#ledgerSummary').innerHTML=`<span>${esc(member(S.memberId)?.display_name||'')} 미정산 벌금</span><b>${money(open)}</b>`;$('#ledger').className=rows.length?'ledger-list':'';$('#ledger').innerHTML=rows.length?rows.slice(0,30).map(x=>`<div class="ledger-row"><div class="ledger-main"><b>${esc(x.goal_title)}</b><span>${x.week_start} · ${esc(x.reason)} · ${x.status==='settled'?'정산 완료':'미정산'}</span></div><div class="ledger-money"><b class="${x.status==='settled'?'settled':''}">${money(x.total_amount)}</b>${x.status==='open'?`<button class="settle" data-settle="${x.id}">정산 완료</button>`:''}</div></div>`).join(''):'<div class="empty">확정된 벌금이 없어요.</div>';$$('[data-settle]').forEach(b=>b.onclick=()=>settle(b.dataset.settle))}
+function render(){const d=new Date(),q=quoteToday(),start=monday();$('#dateLabel').textContent=new Intl.DateTimeFormat('ko-KR',{month:'long',day:'numeric',weekday:'short'}).format(d);$('#weekLabel').textContent=`${start.getMonth()+1}.${start.getDate()} – ${addDays(start,6).getMonth()+1}.${addDays(start,6).getDate()}`;$('#quoteText').textContent=q?.quote_text||'오늘 할 일을 오늘 끝낸다.';$('#quoteBy').textContent=q?.attribution||'일신회';renderSwitcher();renderSummary();renderGoals();renderRanking();renderLedger();$('#rules').textContent=S.settings.group_rules||'매주 일요일 자정 정산\n미달성 시 약속별 설정 벌금 적용'}
+async function toggleCheck(id){const g=S.goals.find(x=>x.id===id),ex=S.checks.find(c=>c.goal_id===id&&c.check_date===ds());try{if(ex){if(g.cadence==='weekly'){toast('오늘 기록은 이미 했어요');return}await api(`goal_checkins?id=eq.${ex.id}`,{method:'DELETE'});toast('오늘 체크를 취소했어요')}else{await api('goal_checkins',{method:'POST',headers:{Prefer:'return=minimal'},body:JSON.stringify({goal_id:id,check_date:ds(),note:''})});toast('+20 XP')}await load()}catch(e){console.error(e);toast('저장하지 못했어요')}}
+function syncCadence(){const w=$('#goalCadence').value==='weekly';$('#goalTarget').disabled=!w;if(!w)$('#goalTarget').value=1}
+function openGoal(g=null){$('#goalForm').reset();$('#goalId').value=g?.id||'';$('#dialogTitle').textContent=g?'약속 수정':'새 약속';$('#goalTitle').value=g?.title||'';$('#goalDesc').value=g?.description||'';$('#goalProof').value=g?.proof_method||'';$('#goalCadence').value=g?.cadence||'daily';$('#goalTarget').value=g?.target_count||1;$('#goalFine').value=g?.fine_amount??10000;$('#deleteGoal').hidden=!g;syncCadence();$('#goalDialog').showModal()}
+async function saveGoal(e){e.preventDefault();const id=$('#goalId').value,p={member_id:S.memberId,title:$('#goalTitle').value.trim(),description:$('#goalDesc').value.trim(),proof_method:$('#goalProof').value.trim(),cadence:$('#goalCadence').value,target_count:Number($('#goalTarget').value)||1,fine_amount:Number($('#goalFine').value)||0,active:true};if(!p.title)return;try{await api(id?`goals?id=eq.${id}`:'goals',{method:id?'PATCH':'POST',headers:{Prefer:'return=minimal'},body:JSON.stringify(p)});$('#goalDialog').close();toast(id?'약속을 수정했어요':'약속을 추가했어요');await load()}catch(e2){console.error(e2);toast('저장하지 못했어요')}}
+async function deleteGoal(){const id=$('#goalId').value;if(!id||!confirm('이 약속을 종료할까요? 과거 체크와 벌금 기록은 남습니다.'))return;try{await api(`goals?id=eq.${id}`,{method:'DELETE'});$('#goalDialog').close();toast('약속을 종료했어요');await load()}catch(e){console.error(e);toast('처리하지 못했어요')}}
+async function settle(id){if(!confirm('정산 완료로 표시할까요? 원장 금액은 그대로 보존됩니다.'))return;try{await api(`fine_ledger?id=eq.${id}`,{method:'PATCH',headers:{Prefer:'return=minimal'},body:JSON.stringify({status:'settled'})});toast('정산 완료');await load()}catch(e){console.error(e);toast('처리하지 못했어요')}}
+async function backup(){const payload={exported_at:new Date().toISOString(),organization:'ILSHINHOE',members:S.members,goals:S.goals,goal_checkins:S.checks,fine_ledger:S.ledger,settings:S.settings};const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=`ilshinhoe-backup-${ds()}.json`;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);toast('백업 파일을 만들었어요')}
+async function badge(){if(!('setAppBadge' in navigator))return;const n=memberGoals(S.memberId).filter(g=>g.cadence==='daily'&&!todayDone(g)).length;try{n?await navigator.setAppBadge(n):await navigator.clearAppBadge()}catch{}}
+async function load(){const sync=$('#sync');sync.className='sync';try{const start=ds(addDays(new Date(),-365));const [members,goals,checks,settings,quotes,ledger]=await Promise.all([api('members?select=*&order=created_at.asc'),api('goals?select=*&order=sort_order.asc,created_at.asc'),api(`goal_checkins?select=*&check_date=gte.${start}&order=check_date.desc`),api('settings?select=*'),api('quotes?select=*&active=eq.true&order=id.asc'),api('fine_ledger?select=*&order=week_start.desc,created_at.desc')]);S.members=members||[];S.goals=goals||[];S.checks=checks||[];S.quotes=quotes||[];S.ledger=ledger||[];S.settings=Object.fromEntries((settings||[]).map(x=>[x.key,x.value]));render();sync.classList.add('ok');badge()}catch(e){console.error(e);sync.classList.add('bad');toast('서버 연결을 확인해주세요')}}
+$$('.nav').forEach(b=>b.onclick=()=>{$$('.nav').forEach(x=>x.classList.toggle('active',x===b));$$('.view').forEach(v=>v.classList.toggle('active',v.id===`view-${b.dataset.view}`));window.scrollTo({top:0,behavior:'smooth'})});
+$('#addGoal').onclick=()=>openGoal();$('#goalCadence').onchange=syncCadence;$('#goalForm').addEventListener('submit',saveGoal);$('#deleteGoal').onclick=deleteGoal;$('#backup').onclick=backup;
+let promptEvent=null;window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();promptEvent=e;$('#install').style.display='block'});$('#install').onclick=async()=>{if(promptEvent){promptEvent.prompt();await promptEvent.userChoice;promptEvent=null;$('#install').style.display='none'}else toast('Chrome 메뉴에서 앱 설치를 선택해주세요')};window.addEventListener('appinstalled',()=>{$('#install').style.display='none';toast('일신회 앱 설치 완료')});
+if('serviceWorker' in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js?v=9').catch(console.error));
+load();setInterval(load,60000);
+</script>
 </body>
 </html>
