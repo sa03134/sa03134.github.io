@@ -1,5 +1,5 @@
-const CACHE='ilshinhoe-shell-v10';
-const SHELL=['./','./index.html','./manifest.webmanifest','./brand-logo.svg','./icon-192.svg','./icon-512.svg'];
+const CACHE='ilshinhoe-shell-v11';
+const SHELL=['./','./index.html','./styles.css?v=11','./app.js?v=11','./manifest.webmanifest?v=11','./brand-logo.svg?v=11','./icon-192.svg?v=11','./icon-512.svg?v=11'];
 self.addEventListener('install',e=>{e.waitUntil(caches.open(CACHE).then(c=>c.addAll(SHELL)));self.skipWaiting()});
 self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))));self.clients.claim()});
 self.addEventListener('fetch',e=>{const u=new URL(e.request.url);if(u.origin!==self.location.origin)return;if(e.request.mode==='navigate'){e.respondWith(fetch(e.request).then(r=>{const copy=r.clone();caches.open(CACHE).then(c=>c.put('./index.html',copy));return r}).catch(()=>caches.match('./index.html')));return}e.respondWith(caches.match(e.request).then(hit=>hit||fetch(e.request)))});
