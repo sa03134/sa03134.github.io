@@ -2,17 +2,17 @@
   "id": "/ilshinhoe/",
   "name": "ILSHINHOE · 일신회",
   "short_name": "일신회",
-  "description": "오늘의 실행을 기록하고 약속을 지키는 사람들의 리그",
+  "description": "오늘 할 일을 체크하고 약속과 벌금을 기록하는 실행 리그",
   "start_url": "/ilshinhoe/",
   "scope": "/ilshinhoe/",
   "display": "standalone",
   "display_override": ["window-controls-overlay", "standalone"],
-  "background_color": "#F4EBDD",
-  "theme_color": "#F4EBDD",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
   "orientation": "portrait-primary",
   "categories": ["productivity", "lifestyle"],
   "icons": [
-    {"src":"./icon-192.svg?v=10","sizes":"192x192","type":"image/svg+xml","purpose":"any"},
-    {"src":"./icon-512.svg?v=10","sizes":"512x512","type":"image/svg+xml","purpose":"any maskable"}
+    {"src":"./icon-192.svg?v=11","sizes":"192x192","type":"image/svg+xml","purpose":"any"},
+    {"src":"./icon-512.svg?v=11","sizes":"512x512","type":"image/svg+xml","purpose":"any maskable"}
   ]
 }
